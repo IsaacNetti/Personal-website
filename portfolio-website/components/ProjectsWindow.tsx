@@ -9,7 +9,7 @@ export default function ProjectsWindow() {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-32 object-cover rounded mb-2"
+              className="w-full h-32 object-cover rounded mb-2 border border-accent"
             />
             <h3 className="text-accent font-bold">{project.title}</h3>
             <p className="text-text text-sm mb-2">{project.description}</p>
