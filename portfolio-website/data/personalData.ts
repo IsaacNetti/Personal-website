@@ -51,7 +51,6 @@ export const educations: Education[] = [
 ];
 
 export const contactInfo: ContactInfo = {
-  name: 'Isaac Netti',
   email: 'isaacnetti@gmail.com',
   github: 'https://github.com/isaacnetti',
   linkedin: 'https://linkedin.com/in/inetti',

@@ -33,7 +33,6 @@ export interface Education {
 }
 
 export interface ContactInfo {
-  name: string;
   email: string;
   github: string;
   linkedin: string;

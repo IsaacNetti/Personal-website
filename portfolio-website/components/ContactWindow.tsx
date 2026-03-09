@@ -2,12 +2,8 @@ import { contactInfo } from '../data/personalData';
 
 export default function ContactWindow() {
   return (
-    <div className="space-y-4">
-      <div>
-        <h3 className="text-accent font-bold mb-2">Name</h3>
-        <p className="text-text">{contactInfo.name}</p>
-      </div>
-      
+    <div className="space-y-5">
+      <h1 className="text-accent font-bold">For custom websites or IT solutions</h1>
       <div>
         <h3 className="text-accent font-bold mb-2">Email</h3>
         <p className="text-text">{contactInfo.email}</p>
