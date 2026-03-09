@@ -1,4 +1,4 @@
-import { projects } from '../data/placeholderData';
+import { projects } from '../data/personalData';
 
 export default function ProjectsWindow() {
   return (

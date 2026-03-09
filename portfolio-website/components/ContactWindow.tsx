@@ -1,4 +1,4 @@
-import { contactInfo } from '../data/placeholderData';
+import { contactInfo } from '../data/personalData';
 
 export default function ContactWindow() {
   return (
@@ -7,10 +7,7 @@ export default function ContactWindow() {
         <h3 className="text-accent font-bold mb-2">Name</h3>
         <p className="text-text">{contactInfo.name}</p>
       </div>
-      <div>
-        <h3 className="text-accent font-bold mb-2">Phone</h3>
-        <p className="text-text">{contactInfo.phone}</p>
-      </div>
+      
       <div>
         <h3 className="text-accent font-bold mb-2">Email</h3>
         <p className="text-text">{contactInfo.email}</p>
@@ -21,7 +18,7 @@ export default function ContactWindow() {
           href={contactInfo.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-accent hover:underline"
+          className="hover:underline"
         >
           {contactInfo.github}
         </a>
@@ -32,7 +29,7 @@ export default function ContactWindow() {
           href={contactInfo.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-accent hover:underline"
+          className="hover:underline"
         >
           {contactInfo.linkedin}
         </a>

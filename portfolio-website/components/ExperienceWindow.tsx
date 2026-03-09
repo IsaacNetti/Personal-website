@@ -1,4 +1,4 @@
-import { experiences, educations } from '../data/placeholderData';
+import { experiences, educations } from '../data/personalData';
 
 export default function ExperienceWindow() {
   return (

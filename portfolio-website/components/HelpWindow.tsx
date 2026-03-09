@@ -12,7 +12,8 @@ export default function HelpWindow() {
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-accent text-lg font-bold mb-3">Available Commands</h2>
+        <h2 className="text-accent text-lg font-bold ">Available Commands</h2>
+        <p className="mb-3">Type these commands into the terminal below (next to the '$') to learn more!</p>
         <div className="space-y-2">
           {commands.map((command) => (
             <div key={command.cmd} className="grid grid-cols-3 gap-4">
