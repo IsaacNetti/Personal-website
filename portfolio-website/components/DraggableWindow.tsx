@@ -49,16 +49,49 @@ export default function DraggableWindow({
     setIsDragging(false);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    const touch = e.touches[0];
+    dragStart.current = {
+      x: touch.clientX - position.x,
+      y: touch.clientY - position.y,
+    };
+    onFocus();
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    setPosition({
+      x: touch.clientX - dragStart.current.x,
+      y: touch.clientY - dragStart.current.y,
+    });
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   useEffect(() => {
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('touchmove', handleTouchMove);
+      document.addEventListener('touchend', handleTouchEnd);
       return () => {
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseup', handleMouseUp);
+        document.removeEventListener('touchmove', handleTouchMove);
+        document.removeEventListener('touchend', handleTouchEnd);
       };
     }
   }, [isDragging]);
+
+  useEffect(() => {
+    const clampedX = Math.max(0, Math.min(position.x, window.innerWidth - size.width));
+    const clampedY = Math.max(0, Math.min(position.y, window.innerHeight - size.height));
+    setPosition({ x: clampedX, y: clampedY });
+  }, []);
 
   return (
     <div
@@ -84,6 +117,7 @@ export default function DraggableWindow({
           <div
             className="bg-secondary px-4 py-2 flex justify-between items-center cursor-move select-none"
             onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
           >
             <span className="text-text font-mono text-sm">{title}</span>
             <button
