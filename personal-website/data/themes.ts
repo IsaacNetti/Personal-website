@@ -17,13 +17,6 @@ export const themes: Theme[] = [
     background: '#0a0a0f',
   },
   {
-    primary: '#2a2d3a',
-    secondary: '#3b3f58',
-    accent: '#9ece6a',
-    text: '#c0caf5',
-    background: '#1a1a2e',
-  },
-  {
     primary: '#1f1d2e',
     secondary: '#2a2d3a',
     accent: '#f7768e',
